@@ -12,8 +12,7 @@ MySQL - 5.7.26-log : Database - inventory
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-USE `MyDatabase`;
+USE `inventory`;
 
 /*Table structure for table `apikeys` */
 
@@ -26,6 +25,21 @@ CREATE TABLE `apikeys` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `apikeys` */
+
+/*Table structure for table `basicinfo` */
+
+DROP TABLE IF EXISTS `basicinfo`;
+
+CREATE TABLE `basicinfo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `url` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+/*Data for the table `basicinfo` */
+
+insert  into `basicinfo`(`id`,`name`,`url`) values (1,'Chinua Achibe','https://ypositivist.s3.us-east-2.amazonaws.com/Achibe.jpg'),(2,'Ayi Kwei Armah','https://ypositivist.s3.us-east-2.amazonaws.com/Ayi+Kwei+Armah.jpg'),(3,'Kofi Annan','https://ypositivist.s3.us-east-2.amazonaws.com/Kofi+Annan.jpg'),(4,'Trump','https://ypositivist.s3.us-east-2.amazonaws.com/Donald+Trrump.jpg'),(5,'Lumumba','https://ypositivist.s3.us-east-2.amazonaws.com/Lumumba.jpg'),(6,'Madiba','https://ypositivist.s3.us-east-2.amazonaws.com/Madiba.jpg'),(7,'MLK','https://ypositivist.s3.us-east-2.amazonaws.com/MLK.jpg'),(8,'Paul Kagame','https://ypositivist.s3.us-east-2.amazonaws.com/Paul+Kagame.jpg'),(9,'Putin','https://ypositivist.s3.us-east-2.amazonaws.com/Putin.jpg'),(10,'Sampson','https://ypositivist.s3.us-east-2.amazonaws.com/Sampson.jpg'),(11,'Sankara','https://ypositivist.s3.us-east-2.amazonaws.com/Sankara.jpeg'),(12,'Wole Soyinka','https://ypositivist.s3.us-east-2.amazonaws.com/Wole+Soyinka.jpg');
 
 /*Table structure for table `cartitems` */
 
