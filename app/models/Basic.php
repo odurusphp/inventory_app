@@ -3,5 +3,5 @@
 
 class Basic extends  tableDataObject
 {
-    const TABLENAME = 'basic';
+    const TABLENAME = 'basicinfo';
 }
