@@ -29,7 +29,7 @@
                             <?php  foreach ($data as $key=>$get):   ?>
                             <tr>
                                 <th scope="row"><?php echo $key + 1  ?></th>
-                                <td><img style="border-radius: 50px" class="img-circle" src="<?php  echo $get->url ?>" height="70" width="100" /></td>
+                                <td><img style="border-radius: 20px" class="img-circle" src="<?php  echo $get->url ?>" height="70" width="100" /></td>
                                 <td><?php  echo $get->name ?></td>
                                 <td><a href="<?php  echo $get->url ?>">Download</a></td>
                             </tr>
