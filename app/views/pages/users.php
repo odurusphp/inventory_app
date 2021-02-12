@@ -16,7 +16,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <table class="table table-striped apptables">
@@ -33,7 +33,7 @@
                             <tr>
                                 <th scope="row"><?php echo $key + 1  ?></th>
                                 <td><?php  echo $get->name ?></td>
-                                <td><img src="<?php  echo $get->url ?>" height="100" width="100" /></td>
+                                <td><img class="img-circle" src="<?php  echo $get->url ?>" height="100" width="100" /></td>
                                 <td><a href="<?php  echo $get->url ?>">Download</a></td>
                             </tr>
                             <?php  endforeach  ?>
