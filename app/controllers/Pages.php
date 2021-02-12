@@ -9,8 +9,6 @@ class Pages extends Controller{
 //    }
 
     public function index(){
-        phpinfo();
-        exit;
         $data = Basic::listAll();
         $this->view( 'pages/users', $data);
     }
