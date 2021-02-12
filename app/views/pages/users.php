@@ -8,10 +8,6 @@
         <div class="row pt-2 pb-2">
             <div class="col-sm-12">
                 <h4 class="page-title">Profile Pictures of Famous People</h4>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javaScript:void();">Group 3</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Famouns People</li>
-                </ol>
             </div>
         </div>
 
@@ -23,17 +19,18 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Name</th>
                                 <th scope="col">Picture</th>
-                                <th scope="col">Donwload</th>
+                                <th scope="col">Name</th>
+
+                                <th scope="col">Donwload Image</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php  foreach ($data as $key=>$get):   ?>
                             <tr>
                                 <th scope="row"><?php echo $key + 1  ?></th>
+                                <td><img style="border-radius: 50px" class="img-circle" src="<?php  echo $get->url ?>" height="70" width="100" /></td>
                                 <td><?php  echo $get->name ?></td>
-                                <td><img style="border-radius: 50px" class="img-circle" src="<?php  echo $get->url ?>" height="100" width="100" /></td>
                                 <td><a href="<?php  echo $get->url ?>">Download</a></td>
                             </tr>
                             <?php  endforeach  ?>
