@@ -3,6 +3,17 @@
 class Pages extends Controller{
 
 
+
+//    public function index(){
+//        $this->view( 'pages/login');
+//    }
+
+    public function index(){
+        $data = Basic::listAll();
+        $this->view( 'pages/users', $data);
+    }
+
+
     public function dashboard(){
         new Guard();
         $today  = date('Y-m-d');
@@ -92,10 +103,6 @@ class Pages extends Controller{
     }
 
 
-
-    public function index(){
-        $this->view( 'pages/login');
-    }
 
 
     public function logout(){
