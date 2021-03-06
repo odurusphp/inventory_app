@@ -14,7 +14,7 @@ class Pages extends PostController {
                 $info = User::userinfo($email);
                 $userid = $info->uid;
                 $_SESSION['userid'] = $userid;
-                header('Location:' . URLROOT . '/pages/dashboard');
+                header('Location:' . URLROOT . '/pages/constituency');
             }else{
                 $message = ['message'=>'Incorrect email or password'];
                 $this->view('pages/login', $message);

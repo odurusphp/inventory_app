@@ -51,12 +51,12 @@
         </div>
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">MAIN NAVIGATION</li>
-            <li>
-                <a href="<?php echo URLROOT.'/pages/dashboard' ?>" class="waves-effect">
-                    <i class="icon-home"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
-
-            </li>
+<!--            <li>-->
+<!--                <a href="--><?php //echo URLROOT.'/pages/dashboard' ?><!--" class="waves-effect">-->
+<!--                    <i class="icon-home"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>-->
+<!--                </a>-->
+<!---->
+<!--            </li>-->
 
 <!--            <li>-->
 <!--                <a href="--><?php //echo URLROOT.'/pages/users' ?><!--"  class="waves-effect">-->
