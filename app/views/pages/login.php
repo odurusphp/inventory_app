@@ -28,9 +28,6 @@
     <div class="card border-primary border-top-sm border-bottom-sm card-authentication1 mx-auto my-5 animated bounceInDown">
         <div class="card-body">
             <div class="card-content p-2">
-                <div class="text-center">
-                    <img src="<?php echo URLROOT.'/backoffice/'?>/images/logo.png" class="logo-icon" alt="logo icon">
-                </div>
                 <?php  if(isset($data['message'])) {  ?>
                 <div align="center" style="color:red"><?php  echo $data['message']; ?></div>
                 <?php }  ?>
@@ -55,25 +52,9 @@
                         </div>
                     </div>
                     <div class="form-row mr-0 ml-0">
-                        <div class="form-group col-6">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="user-checkbox" checked="" />
-                                <label for="user-checkbox">Remember me</label>
-                            </div>
-                        </div>
-                        <div class="form-group col-6 text-right">
-                            <a href="authentication-reset-password.html">Reset Password</a>
-                        </div>
                     </div>
                     <button type="submit" name="login" class="btn btn-primary shadow-primary btn-round btn-block waves-effect waves-light">Sign In</button>
-                    <div class="text-center pt-3">
-                        <p>or Sign in with</p>
-                        <a href="javascript:void()" class="btn-social btn-social-circle btn-facebook waves-effect waves-light m-1"><i class="fa fa-facebook"></i></a>
-                        <a href="javascript:void()" class="btn-social btn-social-circle btn-google-plus waves-effect waves-light m-1"><i class="fa fa-google-plus"></i></a>
-                        <a href="javascript:void()" class="btn-social btn-social-circle btn-twitter waves-effect waves-light m-1"><i class="fa fa-twitter"></i></a>
-                        <hr>
-                        <p class="text-muted">Do not have an account? <a href="authentication-signup.html"> Sign Up here</a></p>
-                    </div>
+
                 </form>
             </div>
         </div>
@@ -88,6 +69,7 @@
 <script src="/backoffice/js/jquery.min.js"></script>
 <script src="/backoffice/js/popper.min.js"></script>
 <script src="/backoffice/js/bootstrap.min.js"></script>
+<?php  require ("includes/footer.php"); ?>
 
 </body>
 

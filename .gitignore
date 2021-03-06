@@ -15,4 +15,6 @@ bfg.jar
 filetmp/
 public/largefiles/
 public/xml/
+public/convertedjson
+public/convertedjsonnew
 

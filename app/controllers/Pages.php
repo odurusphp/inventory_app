@@ -30,57 +30,46 @@ class Pages extends Controller{
         $this->view( 'pages/index', $data);
     }
 
-    public function advancedstock(){
-        new Guard();
-        new RoleGuard('Report');
-            $today = date('Y-m-d');
-            $allproducts = Invoices::getpurchasestoday();
-            $productcount = Product::getProductCount();
-            $outofstock = Product::getoutofstockcount();
-            $totalpayments = Payments::getTotalPayments();
-            $totalpaymentstoday = Payments::getTotalPaymentstoday();
-            $totalrefundtoday = Refund::getTotalRefundToday();
-            $totaltoday = $totalpaymentstoday - $totalrefundtoday;
-            $outofstockdata = Product::listoutofstockcount();
-            $paymentstoday = Payments::listAllPaymentstoday();
 
-            $data = ['products' => $allproducts, 'productcount' => $productcount, 'outofstock' => $outofstock,
-                'totalpayments' => $totalpayments, 'totalpaymentstoday' => $totaltoday,
-                'outofstockdata' => $outofstockdata, 'paymentstoday' => $paymentstoday
-            ];
-            $this->view('pages/advancedstock', $data);
+    public function regions(){
+        $catdata =  Voters::getRegions();
+        $data = [ 'regiondata'=>$catdata ];
+        $this->view('pages/regions', $data );
     }
 
-
-    public function categories(){
-        new Guard();
-        new RoleGuard('Add Categories');
-        $catdata =  Categories::listAll();
-        $data = [ 'catdata'=>$catdata ];
-        $this->view('pages/category', $data );
+    public function constituency(){
+        $catdata =  Voters::getConstituencies();
+        $data = [ 'condata'=>$catdata ];
+        $this->view('pages/const', $data );
     }
 
-    public function products(){
-        new Guard();
-        new RoleGuard('Add Products');
-        $catdata =  Categories::listAll();
-        $productdata = Product::listAll();
-        $data = [ 'catdata'=>$catdata,  'productdata' => $productdata];
-        $this->view('pages/product', $data );
+    public function stations(){
+        $catdata =  Voters::getPollingStations();
+        $data = [ 'stationdata'=>$catdata ];
+        $this->view('pages/station', $data );
     }
 
-    public function editproduct($productid){
-
-        new Guard();
-        new RoleGuard('Edit Products');
-        $pro = new Product($productid);
-        $productdata = $pro->recordObject;
-        $catdata =  Categories::listAll();
-        $historydata = Producthistory::getHistoryById($productid);
-        $data = ['productdata' => $productdata, 'catdata'=>$catdata, 'historydata'=>$historydata];
-        $this->view('pages/editproduct', $data );
+    public function records($code){
+        $catdata =  Voters::getVotersByPollingCode($code);
+        $data = [ 'voterdata'=>$catdata ];
+        $this->view('pages/voterecords', $data );
     }
 
+    public function csv($code){
+        $voterdata =  Voters::getVotersByPollingCode($code);
+        $filename = $code.'.csv';
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename='.$filename);
+        $csvheader = array('Name', 'Voters ID', 'Age', 'Sex',  'Region', 'Constituency', 'Polling Station', 'Polling Code');
+        $output = fopen('php://output', 'w');
+        fputcsv($output, $csvheader );
+
+        foreach ($voterdata as $get){
+            $customerdata = [$get->name, $get->votersid, $get->age, $get->sex,  $get->region,
+                $get->constituency, $get->pollingstation, $get->pollingcode];
+            fputcsv($output,  $customerdata);
+        }
+    }
 
 
     public function users(){

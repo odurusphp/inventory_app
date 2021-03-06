@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Inventory System</title>
+    <title>EC Data Collation</title>
     <!--favicon-->
     <link rel="icon" href="<?php echo URLROOT.'/backoffice/'?>/images/favicon.ico" type="image/x-icon">
     <!-- Vector CSS -->
@@ -58,34 +58,32 @@
 
             </li>
 
+<!--            <li>-->
+<!--                <a href="--><?php //echo URLROOT.'/pages/users' ?><!--"  class="waves-effect">-->
+<!--                    <i class="icon-user"></i> <span>User Management</span> <i class="fa fa-angle-left pull-right"></i>-->
+<!--                </a>-->
+<!--            </li>-->
             <li>
-                <a href="<?php echo URLROOT.'/pages/users' ?>"  class="waves-effect">
-                    <i class="icon-user"></i> <span>User Management</span> <i class="fa fa-angle-left pull-right"></i>
+                <a href="<?php echo URLROOT.'/pages/regions' ?>" class="waves-effect">
+                    <i class="fa fa-folder-open"></i>
+                    <span>Regions</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li>
-                <a href="<?php echo URLROOT.'/pages/categories' ?>" class="waves-effect">
-                    <i class="icon-briefcase"></i>
-                    <span>Categories</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
-
-            </li>
-
-            <li>
-                <a  href="<?php echo URLROOT.'/pages/products' ?>"  class="waves-effect">
-                    <i class="fa fa-shopping-cart"></i> <span>Products</span>
+                <a  href="<?php echo URLROOT.'/pages/constituency' ?>"  class="waves-effect">
+                    <i class="fa fa-folder-open"></i> <span>Constituency</span>
                 </a>
             </li>
 
             <li>
-                <a  href="<?php echo URLROOT.'/invoicing' ?>"  class="waves-effect">
-                    <i class="fa fa-shopping-cart"></i> <span>Sales & Invoicing</span>
+                <a  href="<?php echo URLROOT.'/pages/stations' ?>"  class="waves-effect">
+                    <i class="fa fa-folder-open"></i> <span>Polling Stations</span>
                 </a>
             </li>
 
             <li>
                     <a  href="<?php echo URLROOT.'/search' ?>"  class="waves-effect">
-                        <i class="fa fa-search"></i> <span>Search Invoice</span>
+                        <i class="fa fa-search"></i> <span>Search</span>
                     </a>
             </li>
 
